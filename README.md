@@ -25,7 +25,7 @@
 	- 字符串中都可以有转移字符
 	- 原生字符串: 如果想字符串中\x不被转移,可以在字符串引号前添加r或R如: r'c:\some\name'
 	- bytes类型字符串: b'abc' 或 B'abc' --普通字符串编码之后为bytes类型字符串
-	- 格式化字符串: f'abc{value}',更多使用%号或string.format()
+	
 	- 字符串重复: *
 	- 字符串合并: +
 	- 两个具体字符串相邻会自动合并
@@ -36,5 +36,16 @@
 		切片支持超过字符串长度比如: string[a:len(string)+n],则是到结尾
 	- 字符串是不可变类型,不能通过下标更改原字符串:比如string[0] = 'j'
 
+	- str(object='')和str(object=b'', encoding='utf-8', errors='strict')
+		1).encoding和errors都没有,返回object.__str__(), 如果没__str__则返回repr(object)
+		2).encoding或errors有,则object需要是类bytes对象(如bytes,bytesarray)
+		3).str(bytes,encoding,errors)和bytes.decode(encoding,errors)一样
+		4).str(类bytes)值友好显示,调用__str__方法
+
+	- 格式化字符串: f'abc{value}',更多使用%号或string.format()
+	- string.format()方法
+		1).位置 '{1} {0}'.format('a','b')
+		2).位置 '{0[1]} {0[0]}'.format(('a','b'))
+		3).具名参数 '{name} {age}'.format(name='',age=0)
 
 ```
