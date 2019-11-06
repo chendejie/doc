@@ -43,7 +43,7 @@
 		4).str(类bytes)值友好显示,调用__str__方法
 
 	- 格式化字符串: f'abc{value}',更多使用%号或string.format()
-	- string.format()方法
+	- string.format()方法和%号的用法类似,用冒号替换 如:%03.2f->{:03.2f}
 		1).位置 '{1} {0}'.format('a','b')
 		2).位置 '{0[1]} {0[0]}'.format(('a','b'))
 		3).具名参数 '{name} {age}'.format(name='',age=0)
@@ -65,5 +65,17 @@
 				'{:10,}'.format(9.123456)#'  9.123456'
 				'{:010,}'.format(9.1234)#'0,009.1234'
 			下划线(v3.6新增):同上
+		10).百分数和小数位数
+			'{:08.2%}'.format(111/13)#'0853.85%',其中8是位数不足补0,保留2位小数
+			'{:+08.2f}'.format(111/13)#'+0008.54'
+		11).datetime的格式化显示
+			'{:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime(2010, 7, 4, 12, 15, 58))
+	- 字符串方法
+		1).通用的序列操作
+			包含: x in s | x not in s 
+			合并: s + t | s * n or n * s 
+			索引: s[i] | s[i:j] | s[i:j:k] 
+			计算: len(s) | min(s) | max(s) 
+			查找统计: s.index(x[, i[, j]]) | s.count(x)
 ```
 	
