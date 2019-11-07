@@ -81,6 +81,26 @@
 		3).转小写
 			str.casefold()#对其他语言有效,比如德语'ß'=>'ss'
 			str.lower()#只对ASCII有效,其他语言无效 'ß'不变
+		4).字符串居中对齐--str.center(width[, fillchar])#默认的填充的ASCII空格
+		5).计算字符串中子字符串出现的次数不能重叠计算--str.count(sub[, start[, end]])
+		6).编码字符字符串为字节对象--str.encode(encoding="utf-8", errors="strict")#errors=strict会抛出UnicodeError,errors=ignore会忽略,errors=replace会用?替换
+		7).结尾判断--str.endswith(suffix[, start[, end]])#多个判断可以使用元组
+		8).tab替换为空格--str.expandtabs(tabsize=8)
+		9).查找字符串
+			str.find(sub[, start[, end]])#找不到返回-1, 如果只需判断是否包含可以用in
+			str.index(sub[, start[, end]])#和find的区别是index找不到抛出ValueError,而find返回-1
+		10).格式化字符串
+			str.format(*args, **kwargs)
+			str.format_map(mapping):(v3.2)#和str.format(**mapping)类似,区别是直接使用mapping不拷贝到字典
+		11).判断字符
+			str.isalnum()#数字字母组成
+			str.isalpha()#字母
+			str.isascii():(v3.7)#从U+0000-U+007F
+			str.isdecimal()#小数,unicode数字,全角双字节数字为true,罗马以及汉字数字,小数位false,byte数字报错
+			str.isdigit()#unicode数字,byte数字,全角数字为true, 汉字罗马小数为false
+			str.isnumeric()#unicode数字,全角数字,罗马数字汉字数字为true,小数false,byte数字报错
+		12).
+		13)
 			
 ```
 	
