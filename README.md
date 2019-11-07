@@ -77,5 +77,10 @@
 			索引: s[i] | s[i:j] | s[i:j:k] 
 			计算: len(s) | min(s) | max(s) 
 			查找统计: s.index(x[, i[, j]]) | s.count(x)
+		2).首字母大写--str.capitalize()
+		3).转小写
+			str.casefold()#对其他语言有效,比如德语'ß'=>'ss'
+			str.lower()#只对ASCII有效,其他语言无效 'ß'不变
+			
 ```
 	
