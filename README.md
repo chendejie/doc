@@ -81,7 +81,9 @@
 		3).转小写
 			str.casefold()#对其他语言有效,比如德语'ß'=>'ss'
 			str.lower()#只对ASCII有效,其他语言无效 'ß'不变
-		4).字符串居中对齐--str.center(width[, fillchar])#默认的填充的ASCII空格
+		4).字符串对齐
+			str.center(width[, fillchar])#默认的填充的ASCII空格
+			str.ljust(width[, fillchar])#左对齐
 		5).计算字符串中子字符串出现的次数不能重叠计算--str.count(sub[, start[, end]])
 		6).编码字符字符串为字节对象--str.encode(encoding="utf-8", errors="strict")#errors=strict会抛出UnicodeError,errors=ignore会忽略,errors=replace会用?替换
 		7).结尾判断--str.endswith(suffix[, start[, end]])#多个判断可以使用元组
@@ -99,8 +101,17 @@
 			str.isdecimal()#小数,unicode数字,全角双字节数字为true,罗马以及汉字数字,小数位false,byte数字报错
 			str.isdigit()#unicode数字,byte数字,全角数字为true, 汉字罗马小数为false
 			str.isnumeric()#unicode数字,全角数字,罗马数字汉字数字为true,小数false,byte数字报错
-		12).
-		13)
+			str.isidentifier()#判断是否是有效命名,a-zA-Z0-9_不以数字开始
+			str.iskeyword()#是保留关键字
+			str.isprintable()#是否是可打印字符,转移字符不是
+			str.isspace()#是否是空格
+			str.istitle()#判断是否是标题,大写字母只能跟在无大小写字符之后,小写只能跟在大小写之后
+			str.islower()#判断小写,'_a'=>True,'_'=>False
+			str.isupper()#判断大写,同上
+		12).连接字符串
+			str.join(iterable)#将字符串str连接可迭代
+		13).去除字符串
+			str.lstrip([chars])#
 			
 ```
 	
