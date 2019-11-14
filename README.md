@@ -77,20 +77,30 @@
 			索引: s[i] | s[i:j] | s[i:j:k] 
 			计算: len(s) | min(s) | max(s) 
 			查找统计: s.index(x[, i[, j]]) | s.count(x)
-		2).首字母大写--str.capitalize()
-		3).转小写
+		2).填充
+			str.zfill(width)#按照指定宽度填充'0'字符
+		3).大小写变化
+			str.capitalize()#首字母大写
 			str.casefold()#对其他语言有效,比如德语'ß'=>'ss'
 			str.lower()#只对ASCII有效,其他语言无效 'ß'不变
+			str.upper()#转大写
+			str.swapcase()#大小写切换
+			str.title()#转换成标题型字符串
 		4).字符串对齐
 			str.center(width[, fillchar])#默认的填充的ASCII空格
-			str.ljust(width[, fillchar])#左对齐
+			str.ljust(width[,fillchar])#左对齐
+			str.rjust(width[,fillchar])#右对齐
 		5).计算字符串中子字符串出现的次数不能重叠计算--str.count(sub[, start[, end]])
 		6).编码字符字符串为字节对象--str.encode(encoding="utf-8", errors="strict")#errors=strict会抛出UnicodeError,errors=ignore会忽略,errors=replace会用?替换
-		7).结尾判断--str.endswith(suffix[, start[, end]])#多个判断可以使用元组
+		7).开头结尾判断
+			str.endswith(suffix[, start[, end]])#多个判断可以使用元组
+			str.startswith(prefix[, start[, end]])#判断开头
 		8).tab替换为空格--str.expandtabs(tabsize=8)
 		9).查找字符串
 			str.find(sub[, start[, end]])#找不到返回-1, 如果只需判断是否包含可以用in
+			str.rfind(sub[,start[,end]])#返回最高的索引,如果找不到返回-1
 			str.index(sub[, start[, end]])#和find的区别是index找不到抛出ValueError,而find返回-1
+			str.rindex(sub[,start[,end]])#和rfind类型,找不到会抛出ValueError
 		10).格式化字符串
 			str.format(*args, **kwargs)
 			str.format_map(mapping):(v3.2)#和str.format(**mapping)类似,区别是直接使用mapping不拷贝到字典
@@ -108,10 +118,52 @@
 			str.istitle()#判断是否是标题,大写字母只能跟在无大小写字符之后,小写只能跟在大小写之后
 			str.islower()#判断小写,'_a'=>True,'_'=>False
 			str.isupper()#判断大写,同上
-		12).连接字符串
-			str.join(iterable)#将字符串str连接可迭代
+		12).字符串串联
+			str.join(iterable)#用str连接可迭代对象
 		13).去除字符串
-			str.lstrip([chars])#
-			
+			str.lstrip([chars])#去除左端指定字符,没有指定或None则去除空格
+			str.rstrip([chars])#去除右端指定字符
+			str.strip([chars])#去除两端指定字符
+		14).生成Unicode序列号的对应字典
+			static str.maketrans(x[,y[,z]])#用于str.translate()
+		15).分割字符串
+			str.partition(sep)#按sep第一次出现的位置分割字符串成元组(前,sep,后),如果没有找到sep返回(str,'','')
+			str.rpartition(sep)#按sep最后一次出现的位置分割字符串成元组(前,sep,后),如果没有找到sep返回(str,'','')
+			str.rsplit(sep=None,maxsplit=-1)#从右向左依次按照sep分割成列表,如果sep为None,则按空格分割, 如果没有指定maxsplit为-1则为全部分割,和split()一样效果
+			str.split(sep=None, maxsplit=-1)#分割字符串为列表
+			str.splitlines([keepends])#按照换行符分割字符串
+		16).替换字符串
+			str.replace(old,new[,count])#可以指定替换次数
+			str.translate(table)#按照table映射替换字符串
+		17).
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
