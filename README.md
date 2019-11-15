@@ -131,11 +131,55 @@
 			str.rpartition(sep)#按sep最后一次出现的位置分割字符串成元组(前,sep,后),如果没有找到sep返回(str,'','')
 			str.rsplit(sep=None,maxsplit=-1)#从右向左依次按照sep分割成列表,如果sep为None,则按空格分割, 如果没有指定maxsplit为-1则为全部分割,和split()一样效果
 			str.split(sep=None, maxsplit=-1)#分割字符串为列表
-			str.splitlines([keepends])#按照换行符分割字符串
+				#如果指定maxsplit且不为-1,将按sep切割个不多于maxsplit+1份,'1,2,3'.split(',',maxsplit=1)=>['1','2,3']
+				#不指定sep或为None, 空字符串为空列表  ''.split()=>[]
+				#不指定sep或为None,非空字符串为该字符串列表 'a'.split()=>['a']
+				#不指定sep或为None,被分割的有空格,则分隔符为连续空格 ' a  b c'.split()=>['a','b','c']
+				#空字符串+sep不为None ''.split('a')=>['']
+				#字符串两边含有分割符 'aba'.split('a')=>['','b','']
+			str.splitlines([keepends])
+				#按照换行符分割字符串,首先将字符串+一个换行符 进行 分组,如果没有keepends=True,则将去除换行符,生成没有换行符的列表,有则保留换行符
+				#'a\n\nb\r\nc'.splitlines()==>['a','','b','c']
+				#'a\n\nb\r\nc'.splitlines(keepends=True)==>['a\n','\n','b\r\n','c']
+				#空字符串 ''.splitlines()=>[]
 		16).替换字符串
 			str.replace(old,new[,count])#可以指定替换次数
 			str.translate(table)#按照table映射替换字符串
+				#table需要是实现__getitem__()
+				#table需要 索引 为 Unicode序数
+				#如果删除,则table中的索引对应的是None   如:table={97:None}
+				#可以使用str.maketrans()创建table
 		17).
+```
+### 列表
+```
+	- 列表可以包含一系列不同类型的数据,用方括号包裹,如: squares=[1,2,3]
+	- 和字符串一样列表可以索引切片操作,如:squares[0],squares[-3:]
+	- 可以使用squares[:]创建浅拷贝
+	- 可以使用+号连接两个列表
+	- 列表是可变类型 可以通过下标进行对值的修改,如: squares[0] = 100
+	- 列表长度计算: len(squares)
+	- 列表可以嵌套
+```
+## 控制语句
+### if语句
+```
+	- python没有`switch case`
+	- if
+		if condition:
+			pass
+	- if-else
+		if condition:
+			pass
+		else:
+			pass
+	-if-elif-else
+		if condition:
+			pass
+		elif condition2:
+			pass
+		else:
+			pass
 ```
 
 
