@@ -181,10 +181,32 @@
 		else:
 			pass
 ```
-
-
-
-
+### for语句
+```
+	遍历可迭代的
+	for _ in f:
+		pass
+	遍历同时修改集合容易出问题,应该需要创建副本,如:
+	for user,status in user.copy().items():
+		if status=='inactive':
+			del users[user]
+```
+### range
+```
+	生成数字序列: 
+		range(num) => [0,num)#要前不要后
+		range(num1,num2) => [num1,num2)
+		range(num1,num2,step) =>[num1,num2)#步长为step
+	range只要调用的时候才会分配空间,这和列表的区别
+```
+### 循环中的break,continue,else
+```
+	- break: 跳出最内层的循环
+	- else: for循环的执行结束, while为Flase的时候执行 else语句, 但当有break跳出循环的else不会被执行
+		循环else和try else类似
+	- continue: 跳过当前循环,执行下一步
+```
+### pass用于 语法上需要,程序上没有操作的情况
 
 
 
