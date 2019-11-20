@@ -209,9 +209,9 @@
 ### pass用于 语法上需要,程序上没有操作的情况
 ### function
 ```
-	def funcName(params):
+	def funcName(params:str,egg:str='eggs')->str:
 		'''docstring'''
-		pass
+		return ''
 	- 变量的作用域: 本地局部变量->闭包变量->全局变量->内置变量
 	- 全局变量和闭包变量不能,不能在函数中直接更改来改变该变量的值, 除非用global定义全局变量,或nonlocal定义闭包变量
 	- 按值传参和引用传参
@@ -233,10 +233,26 @@
 			可变参数之后的参数必须是关键字参数
 		*args: 在调用函数时, 对参数进行解包, 可有列表和元组解包
 		**kwargs: 在函数调用是, 对关键字参数进行解包, 可由字典解包
+	- 函数的注解放在函数的__annotations__属性中
 ```
 ### lambda表达式
 ```
-	
+	lambda a,b: a+b
+	lambda 多用于作为函数调用的参数
+```
+### 文档字符串说明
+```
+	def my_function():
+		'''简短说明目的用途
+			空一行
+			调用约定和效果
+		 '''
+		pass
+	print(my_function.__doc__)
+```
+## 代码格式
+```
+	https://www.python.org/dev/peps/pep-0008/
 ```
 
 
