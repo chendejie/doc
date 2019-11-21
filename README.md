@@ -257,6 +257,7 @@
 ## 数据结构
 ```
 	- 列表
+		方法
 		1). 追加,扩展
 			list.append(x): <=> a[len(a):] = [x]
 			list.extend(iterable) <=> a[len(a):] = iterable
@@ -274,8 +275,19 @@
 			list.count(x): 统计x在列表中出现的次数
 		6). 排序
 			list.sort(key=None,reverse=False): 排序list,和sorted(list,key=None,reverse=False)效果一样, sorted返回新列表
-	
-
+		#其中在sort使用中, integer和string不能对比,None不能和其他类型对比, 复数也不能对比
+		列表堆栈:后进先出
+			append()和pop()
+		列表:先进先出
+			由于列表移除第一个元素,后面元素都要改变,不是O(1)操作
+			collections.deque就是先进先出的高效实现
+			collections.deque([]).append('').popleft()
+		列表推导
+			[x for x in x], [x for x in x if x]
+	- 列表的del语句
+		删除列表指定元素,通过下标del a[0]
+		可以通过切片删除del a[2:4],及清空del a[:]
+		del也可以删除整个元素
 ```
 
 
