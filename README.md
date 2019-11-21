@@ -254,7 +254,29 @@
 ```
 	https://www.python.org/dev/peps/pep-0008/
 ```
+## 数据结构
+```
+	- 列表
+		1). 追加,扩展
+			list.append(x): <=> a[len(a):] = [x]
+			list.extend(iterable) <=> a[len(a):] = iterable
+		2). 插入,移除
+			list.insert(i,x): 在i位置插入x
+			list.pop([i]): 移除i位置的值,若没有指定,移除最后一个
+			list.remove(x): 移除第一次匹配的x, 若没有找到,抛出异常ValueError
+		3). 清除,拷贝, 翻转
+			list.clear(): <=> del a[:]
+			list.copy(): <=> list[:]
+			list.reverse(): 倒序原列表 和 list[::-1]效果一样
+		4). 索引位置
+			list.index(x[,start[,end]]): 查找x的索引位置, 找不到抛出ValueError
+		5). 统计
+			list.count(x): 统计x在列表中出现的次数
+		6). 排序
+			list.sort(key=None,reverse=False): 排序list,和sorted(list,key=None,reverse=False)效果一样, sorted返回新列表
+	
 
+```
 
 
 
