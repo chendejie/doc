@@ -340,6 +340,9 @@
 		import a.b.c #中间必须是一个包
 		from a.b import c
 	没有找到抛出ImportError异常
+	对于 from a.b import *
+		如果一个包下面的__init__.py定义了一个列表__all__,则返回该列表的模块
+		如果没有定义__all__
 ```
 
 
