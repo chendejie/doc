@@ -313,6 +313,7 @@
 		相同类型序列比较,按照字典顺序,字符串的字典顺序是Unicode码
 ```
 ## 模块
+## 模块相关
 ```
 	模块可以被其他模块导入
 	模块文件需要是.py扩展名
@@ -327,9 +328,19 @@
 		if __name__=='__main__':pass #直接运行该模块执行, 作为模块导入则不会执行
 	当导入一个spam,先去找内置模块是否有, 没有再去sys.path寻找
 		sys.path包含当前脚本路径, PYTHONPATH, 以及安装依赖默认路径
+		可以添加需要的 如: sys.path.append('/some/path')
 	模块编译缓存在 __pycache__/module.version.pyc
+	通过dir(modulename)函数可以获得模块定义的成员方法,dir()不会列出内置built-in函数变量,可以用dir(builtins)
 ```
-
+### 包相关
+```
+	包通过 点的模块命名 A.B来构建命名空间
+	__init__.py文件使 路径中的文件作为包对待, __init__.py文件可以是一个空文件
+	使用方式: 
+		import a.b.c #中间必须是一个包
+		from a.b import c
+	没有找到抛出ImportError异常
+```
 
 
 
