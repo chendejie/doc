@@ -342,8 +342,14 @@
 	没有找到抛出ImportError异常
 	对于 from a.b import *
 		如果一个包下面的__init__.py定义了一个列表__all__,则返回该列表的模块
-		如果没有定义__all__
+		如果没有定义__all__, 确保a.b被导入, 并会运行__init__.py中初始化代码,以及一些在包中定义的变量, 之前导入的包也会导入
+	包的相对路径导入
+		from  . import echo
+		from  .. import echo
+		from  ..filters import echo
+	包的__path__属性: 初始化为包好__init__.py的目录名列表
 ```
+## 输入和输出
 
 
 
