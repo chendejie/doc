@@ -350,7 +350,26 @@
 	包的__path__属性: 初始化为包好__init__.py的目录名列表
 ```
 ## 输入和输出
-
+### 格式输出
+```
+	1. 使用字符串格式化方式,以f或F在字符串前面,可以替换字符串中的变量:如, year=2016 f'year={year}'
+	2. 使用str.format()方式
+	3. 手动设置
+	4. 老版本的格式化 %
+```
+### 文件读写
+```
+	open(filename, mode)
+	mode:
+		r: 读
+		w: 覆盖写
+		a: 追加
+		r+: 读写
+		b: 二进制模式
+	with open() as f:
+		pass
+	try-finally 捕获open
+```
 
 
 
