@@ -369,6 +369,7 @@
 	with open() as f:
 		pass
 	try-finally 捕获open
+	f.read(size): 如果没有size或size为负数,则整个文件内容会读取返回, 否则返回size大小内容,如果达到文件结尾返回空字符串
 ```
 
 
