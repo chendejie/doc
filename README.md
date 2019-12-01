@@ -370,8 +370,82 @@
 		pass
 	try-finally 捕获open
 	f.read(size): 如果没有size或size为负数,则整个文件内容会读取返回, 否则返回size大小内容,如果达到文件结尾返回空字符串
+	f.readline(): 读取一行, 如果到达文件结尾返回空字符串
+	list(f): 读取所有
+	f.readlines(): 读取所有
+	for line in f: 循环读取
+	f.write(str): 写入str返回写入字符数
+	f.tell(): 返回当前指针的位置
+	f.seek(offset,whence): 设置文件指针whence默认为0, 表示从文件开始, 1为当前位置开始, 2位文件末尾开始, offset为偏移量, 在python3中如果模式不是b,只允许从文件开头计算相对偏移位置, 或者偏移位置为0
+	f.isatty(): 检测文件是否连接到一个终端设备
+	f.truncate(): 清空文件
+	json数据的文件序列化和反序列化
+	json.dump(x,f)#将数据序列化到文件
 ```
-
+##异常报错
+###异常捕获
+```
+	格式:
+		try:
+			pass
+		except:
+			pass
+		try:
+			pass
+		except Exception as e:
+			pass
+	捕获多个异常可以写一起,或分开多个except
+		try:
+			pass
+		except(RuntimeError,TypeError,NameError) as e:
+			pass
+	else可选项:
+			pass
+		except:
+			pass
+		else:
+			pass#在没有抛出异常的情况下执行
+	使用sys.exc_info()获得异常信息
+	获得报错信息:
+		try:
+			pass
+		except Exception as e:
+			print(e)#调用__str__
+			print(e.args)#参数
+	抛出异常
+		raise ...#如 raise NameError('haha'),该参数将会给except捕获的异常e.args
+	finally语句:
+		无论是否有异常,都会执行finally
+		如果异常没被捕获到, 则在执行完finally后抛出异常
+		如果try中有break,continue,return语句,finally会在触发break,continue,return之前执行
+		如果finally中有return会先与try中的return执行返回
+```
+## 类对象
+### 命名空间与作用域
+```
+	局部作用域,闭包作用域,全局作用域,内置作用域
+	如果局部变量有nonlocal修改,则会修改直接外层(非全局)的变量值,如果外层的局部变量是全局变量,则不能用nonlocal修饰
+	global修饰的局部变量变成全局变量,修改全局变量的值而不会改变局部外层的局部变量的值
+	函数的作用域有定义时决定的,而不是调用的时候
+```
+###类
+```
+	定义:
+		class ClassName:
+			pass
+	类的定义也可以在if判断中或函数内
+	类对象支持属性引用和实例化
+		MyClass.attrName
+		MyClass.funcName
+		MyClass.__doc__
+		x = MyClass()
+	__init__方法:实例化之前会先调用该方法
+	类变量被所用实例共享
+	object.__class__存储类
+	isinstance()#实例判断
+	issubclass()#判断是否是子类
+	多继承属性
+```
 
 
 
