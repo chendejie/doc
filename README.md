@@ -459,6 +459,10 @@
 	在命令行模式下读取所有文件的行,参考:fileinput
 	临时文件操作,参考tempfile模块
 	其他更高级的文件目录操作可以参考shutil模块
+	os模块的所有函数抛出OSError当文件名路径无法访问,其他参数类型不对,或者操作系统不接受
+	os.name: 操作系统依赖模块导入的名称,目前: posix, nt, java
+	os.ctermid():返回终端名称,unix可用
+	os.environ: 获得环境的对象映射,使用os.putenv()更改变量, os.unsetenv()删除变量
 ```
 
 
