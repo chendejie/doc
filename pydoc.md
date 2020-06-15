@@ -463,23 +463,11 @@
 	os.name: 操作系统依赖模块导入的名称,目前: posix, nt, java
 	os.ctermid():返回终端名称,unix可用
 	os.environ: 获得环境的对象映射,使用os.putenv()更改变量, os.unsetenv()删除变量
+	os.chdir(path)
+	os.fchdir(fd)
+	os.getcwd(): 获得当前位置路径
+	os.fsencode(filename)
+	os.fsdecode(filename)
+	os.fspath(path) # 感觉没什么用, str和bytes的path会直接返回
+	os.getenv(key,default=None) #unix中值会被sys.getfilesystemencoding()解码, 如果要使用其他编码, 可以使用os.getenvb()
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
